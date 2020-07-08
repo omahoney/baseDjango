@@ -1,0 +1,33 @@
+{% load static %}
+
+{% block additional_styles %}
+    <style>
+    </style>
+{% endblock additional_styles %}
+
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow p-3 mb-5 bg-white rounded fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'pages-home' %}">
+            <img src="{% static 'img/logo.png' %}" style="width:30px ! important;" alt="" class="logo" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-item nav-link fas fa-home fa-2x" href="#"></a>
+                <a class="nav-item nav-link" href="{% url 'pages-home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'pages-about' %}">About</a>
+            </ul>
+            <!-- Navbar Right Side -->
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{%  url 'logout' %}">Logout</a>
+                {%  else %}
+                <a class="nav-item nav-link" href="{%  url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{%  url 'register' %}">Register</a>
+                {%  endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

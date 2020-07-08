@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/spacelab/bootstrap.min.css" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c13de40d2a.js" crossorigin="anonymous" ></script>
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% if title %}
+        <title>Base - {{ title }}</title>
+    {% else %}
+        <title>Base</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+        {% include 'partials/_navbar.html' %}
+        {% include 'partials/_alerts.html' %}
+    </header>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {%  block content %}{% endblock %}
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        &copy; 2020 <a target="_blank" href="#" title="Base">Base Corp.</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="pull-right" src="{% static 'img/logo.png' %}" alt="Base" title="Base">
+                    </div>
+                </div>
+            </div>
+        </footer><!--/#footer-->
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
